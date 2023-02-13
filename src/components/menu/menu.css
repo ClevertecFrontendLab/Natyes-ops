@@ -1,0 +1,112 @@
+.menu-link {
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: none;
+}
+.menu-link.active .link{
+    max-width: 255px;
+    margin: 0;
+    padding-bottom: 8px;
+    background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%) 1;
+}
+.menu-list {
+    padding: 0 0 0 24px;
+    overflow: hidden;
+    transition: max-height .3s ease-out;
+}
+
+.menu-link.active .link-oth {
+    margin: 42px 0;
+}
+.menu-link__select {
+    position: relative;
+}
+.menu-link__select .link {
+    margin: 0;
+}
+.menu-arrow {
+    padding: 4px 10px;
+    position: absolute;
+    top: 4px;
+    right: 33px;
+    transition: transform .3s;
+    border: none;
+    background: none;
+}
+.menu-arrow.hide {
+    transform: rotate(180deg);
+}
+.menu-list.hide {
+    max-height: 0;
+}
+.menu-list.show li a{
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+.menu-list.hide {
+    display: none;
+}
+.menu-list.hide li a{
+    opacity: 0;
+}
+.menu-list.show {
+    max-height: 100vh;
+    transition: max-height 1s ease-in;
+}
+.link-oth {
+    margin: 42px 0;
+}
+.menu.show {
+    position: absolute;
+    top: -36px;
+    display: none;
+    padding: 32px 0 10px;
+    max-width: 502px;
+    max-height: 442px;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18), 0px 1px 5px rgba(191, 196, 201, 0.24);
+    border-radius: 10px;
+    overflow: auto;
+    z-index: 1000;
+}
+.menu.show .menu-arrow {
+    right: 25px;
+}
+@media screen and (max-width: 992px) {
+    .menu.show {
+        display: block;
+    }
+    .menu-nav,
+    .menu-user {
+        padding: 0 32px;
+    }
+    .menu-nav {
+        max-width: 338px;
+        width: 100%;
+        padding-bottom: 8px;
+    }
+    .menu-user {
+
+        border-top: 1px solid #BFC4C9;
+    }
+    .menu-user .link-oth {
+        margin-top: 32px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .menu-user {
+        padding: 0 16px;
+    }
+    .menu-nav {
+        padding: 0 16px 8px;
+    }
+    .menu.show .menu-arrow {
+        right: 8px;
+    }
+}

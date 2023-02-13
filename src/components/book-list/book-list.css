@@ -1,0 +1,36 @@
+.books {
+    display: grid;
+}
+.books.grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 470px;
+    gap: 21.5px 24px;
+}
+.books.line {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 218px;
+    gap: 16px;
+}
+@media screen and (max-width: 1024px) {
+    .books.line {
+        grid-auto-rows: auto;
+    }
+}
+@media screen and (max-width: 992px) {
+    .books.grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px 35px;
+    }
+}
+@media screen and (max-width: 670px) {
+    .books.grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width: 480px) {
+    .books.grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 16px;
+    }
+}

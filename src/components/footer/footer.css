@@ -1,0 +1,22 @@
+.footer {
+    margin: 62px 0 0;
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #BFC4C9;
+}
+ul.soc {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+@media screen and (max-width: 480px) {
+    .footer {
+        text-align: center;
+        flex-direction: column;
+    }
+    .footer-t {
+        margin-bottom: 23px;
+    }
+}

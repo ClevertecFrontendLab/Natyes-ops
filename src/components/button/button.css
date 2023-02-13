@@ -1,0 +1,42 @@
+.btn {
+    max-width: 166px;
+    height: 40px;
+    width: 100%;
+    padding: 11px 0;
+    margin: 0 auto;
+    background: linear-gradient(233.73deg, #F83600 -16.08%, #F9D423 327.37%);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+}
+.btn:hover {
+    background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+}
+.btn:active {
+    box-shadow: 0px 3px 4px rgba(222, 125, 11, 0.2), 0px 1px 10px rgba(249, 89, 8, 0.2);
+}
+.btn-book--i {
+    background: #FFFFFF;
+    border: 1px solid #BFC4C9;
+    font-weight: 600;
+    color: #363636;
+}
+.btn.btn-book--i:hover {
+    border: 1px solid #A7A7A7;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(54, 54, 54, 0.1);
+}
+.btn-book--i:active {
+    border: 1px solid #BFC4C9;
+    box-shadow: 0px 3px 4px rgba(222, 125, 11, 0.2), 0px 1px 10px rgba(249, 89, 8, 0.2);
+}
+.btn-book--bron,
+.btn.btn-book--bron:hover {
+    background: #F9F9FA;
+    border: 1px solid #BFC4C9;
+    font-weight: 600;
+    color: #A7A7A7;
+    letter-spacing: 0.2px;
+}

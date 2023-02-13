@@ -1,0 +1,33 @@
+.book-page .header {
+    margin-bottom: 27px;
+}
+.book-main.container {
+    position: relative;
+}
+@media screen and (max-width: 992px) {
+    .book-page .header {
+        margin-bottom: 23px;
+    }
+    .crumbs.body-s {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .book-page .footer{
+        margin: 46px 0 0;
+        padding: 13px 0;
+    }
+    .book-page .footer ul.soc {
+        gap: 24px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .book-page .header {
+        margin-bottom: 9px;
+    }
+    .crumbs.body-s {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.2px;
+    }
+}
