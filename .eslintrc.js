@@ -20,11 +20,11 @@ module.exports = {
                 devDependencies: ['**/*.test.{ts,tsx,js,jsx}'],
             },
         ],
-        'import/no-default-export': 'error',
-        indent: 'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
+        // 'import/no-default-export': 'error',
+        // indent: 'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^action' }],
-        "no-nested-ternary": "off",
-        "no-unneeded-ternary": "off"
+        'no-nested-ternary': 'off',
+        'no-unneeded-ternary': 'off'
     },
     ignorePatterns: ['coverage', 'cypress.config.ts'],
 };
