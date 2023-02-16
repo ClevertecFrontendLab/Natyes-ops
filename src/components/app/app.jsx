@@ -8,14 +8,11 @@ import { Header } from '../header';
 import { MenuList } from '../menu';
 import { TermsPage } from '../terms';
 
-import { booksData } from './data'
-
 import './app.css';
 
 export const App = () => {
-    const [books] = useState(booksData);
     const root = useLocation();
-    const activeLink = () => root.pathname ===  '/' ? <BookList books={books}/> : root.pathname ===  '/terms' ? <TermsPage/> : root.pathname ===  '/contract' ? <ContractPage/> : <BookList books={books}/>;
+    const activeLink = () => root.pathname ===  '/' ? <BookList/> : root.pathname ===  '/terms' ? <TermsPage/> : root.pathname ===  '/contract' ? <ContractPage/> : <BookList/>;
 
     const [burger, setBurger] = useState(false);
     const toggleBurger = () => burger ? 'show' : 'hide';
