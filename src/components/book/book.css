@@ -15,6 +15,7 @@
     border-radius: 10px;
     border: 1px solid #A7A7A7;
     align-self: start;
+    overflow: hidden;
 }
 .book-i img{
     width: 100%;
