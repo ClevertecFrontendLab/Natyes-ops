@@ -1,0 +1,17 @@
+.error {
+    display: grid;
+    grid-template-columns: 24px 1fr 24px;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    top: -64px;
+    width: 100%;
+    padding: 24px 32px;
+    background: #FEEBEA;
+    border: 1.5px solid #F42C4F;
+    border-radius: 5px;
+    z-index: 1000;
+}
+.error-exit {
+    cursor: pointer;
+}
