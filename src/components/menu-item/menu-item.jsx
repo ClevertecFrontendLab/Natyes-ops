@@ -15,9 +15,9 @@ export const MenuItem = ({...props}) => {
     return(<li className='menu-list__item body-l'>
     {
         item.id === 0 ?
-        <NavLink to={`/books/${item.category}`} className={`title ${activeLink()}`} data-test-id={checkMenuFirst()} onClick={checkBurger()}><span className="title">{item.title} </span><span className="count body-s black40">{item.count}</span></NavLink>
+        <NavLink to={`/books/${item.path}`} className={`title ${activeLink()}`} data-test-id={checkMenuFirst()} onClick={checkBurger()}><span className="title">{item.name} </span><span className="count body-s black40">{item.id}</span></NavLink>
         :
-        <NavLink to={`/books/${item.category}`} className='title' onClick={checkBurger()}><span className="title">{item.title} </span><span className="count body-s black40">{item.count}</span></NavLink>
+        <NavLink to={`/books/${item.path}`} className='title' onClick={checkBurger()}><span className="title">{item.name} </span><span className="count body-s black40">{item.id}</span></NavLink>
     } 
 </li> 
 )

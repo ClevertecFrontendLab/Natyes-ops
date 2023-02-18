@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import {  itemsData } from '../app/data'
+import { getCategory } from '../../services/api';
 import  { MenuItem }  from '../menu-item';
 
 import arrow from './arrow.png'
@@ -10,7 +11,21 @@ import arrowa from './arrowa.png'
 import './menu.css';
 
 export const MenuList = ({...props}) => {
-    const [items] = useState(itemsData);
+    const items = useSelector(state => state.library.category)
+    const loading = useSelector(state => state.app.loading)
+
+    const dispatch = useDispatch()
+
+    const getCategoryes = useCallback(() => {
+        dispatch(getCategory())
+    },[dispatch])
+
+    useEffect(() => {
+        if (!items.length) {
+            getCategoryes()
+        }
+    }, [getCategoryes, items]);
+
     const [menu, setMenu] = useState(true);
     const root = useLocation();
     const list = useRef(null)
@@ -63,7 +78,7 @@ export const MenuList = ({...props}) => {
                 </div>
             </NavLink>
             <ul className={`menu-list ${toggleMenu()}`}>
-                {items.map(item => 
+                {!loading && items.map(item => 
                     <MenuItem item={item} key={item.id} menu={menu} onClick={clickBurger}/>
                 )}
             </ul>
