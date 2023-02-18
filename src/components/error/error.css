@@ -13,5 +13,7 @@
     z-index: 1000;
 }
 .error-exit {
+    border: none;
+    background: none;
     cursor: pointer;
 }

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
 
+import { downError } from '../../redux/app-slice';
 import { getCategory } from '../../services/api';
 import  { MenuItem }  from '../menu-item';
 
@@ -14,6 +15,9 @@ export const MenuList = ({...props}) => {
     const items = useSelector(state => state.library.category)
     const loading = useSelector(state => state.app.loading)
     const dispatch = useDispatch()
+    const close = useCallback(() => {
+        dispatch(downError())
+    },[dispatch])
 
     const getCategoryes = useCallback(() => {
         dispatch(getCategory())
@@ -84,8 +88,8 @@ export const MenuList = ({...props}) => {
                     <MenuItem item={item} key={item.id} menu={menu} onClick={clickBurger}/>
                 )}
             </ul>
-            <NavLink className='menu-link' to="/terms" onClick={() => {clickPage(); clickBurger()}} data-test-id={checkTerms()}><h5 className='link link-oth'>Правила пользования</h5></NavLink>
-            <NavLink className='menu-link' to="/contract" onClick={() => {clickPage(); clickBurger()}} data-test-id={checkContract()}><h5 className='link link-oth'>Договор оферты</h5></NavLink>
+            <NavLink className='menu-link' to="/terms" onClick={() => {clickPage(); clickBurger(); close()}} data-test-id={checkTerms()}><h5 className='link link-oth'>Правила пользования</h5></NavLink>
+            <NavLink className='menu-link' to="/contract" onClick={() => {clickPage(); clickBurger(); close()}} data-test-id={checkContract()}><h5 className='link link-oth'>Договор оферты</h5></NavLink>
             </div>
             {
                 showMenu === 'show' && cWidth < mWidth ? 
