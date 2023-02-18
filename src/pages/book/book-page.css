@@ -1,16 +1,15 @@
 .book-page {
-    position: relative;
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
+.book-main {
+    position: relative;
+}
 .book-page .header {
     margin-bottom: 27px;
 }
-.book-main.container {
-    position: relative;
-}
-.book-main .error {
+.book-page .error {
     top: -19%;
 }
 @media screen and (max-width: 992px) {
@@ -28,6 +27,12 @@
     .book-page .footer ul.soc {
         gap: 24px;
     }
+    .book-page .error {
+        max-width: 640px;
+        left: 50%;
+        top: -21%;
+        transform: translateX(-50%);
+    }
 }
 @media screen and (max-width: 480px) {
     .book-page .header {
@@ -38,5 +43,10 @@
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.2px;
+    }
+    .book-page .error {
+        max-width: 280px;
+        top: -9%;
+        gap: 11px;
     }
 }
