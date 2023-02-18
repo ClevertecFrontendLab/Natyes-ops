@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { BookRating } from '../book-rating';
 import { ButtonBook } from '../button';
@@ -10,29 +10,27 @@ import { SpecBook } from '../spec-book';
 import './book-info.css';
 
 export const BookInfo = () => {
-    const {state} = useLocation();
-    const imgs = state.propsBook.imgBook;
+    const current = useSelector(state => state.library.currentBook);
+
+    const imgs = current.images;
 
     return(
         <div>
             <div className="book-page__info">
-                
             {
-                state.propsBook.img === '' ? <div className='book-page__img book-i book-no' data-test-id='slide-big'/> : <SliderBook imgs={imgs}/>
+                current.images === null ? <div className='book-page__img book-i book-no' data-test-id='slide-big'/> : <SliderBook imgs={imgs}/>
             }     
-                <h3 className="book-page__title">{state.propsBook.title}</h3>
-                <h5 className="book-page__author black40">{state.propsBook.author}, {state.propsBook.year}</h5>
-                <ButtonBook  {...state}/> 
+                <h3 className="book-page__title">{current.title}</h3>
+                <h5 className="book-page__author black40">{current.authors[0]}, {current.issueYear}</h5>
+                <ButtonBook  {...current}/> 
                 <div className="book-page__text body-l">
                     <h5 className="about">О книге</h5>
-                    {state.propsBook.descr.map(item => <p className='about-p'>{item}</p>)}
+                    <p className='about-p'>{current.description}</p>
                 </div>
             </div>
-            <BookRating {...state} title='Рейтинг'/>
-            <SpecBook {...state} title='Подробная информация'/>
-            <Reviews {...state} title='Отзывы' />
+            <BookRating {...current} title='Рейтинг'/>
+            <SpecBook {...current} title='Подробная информация'/>
+            <Reviews {...current} title='Отзывы' />
             <Footer/>
-        </div>
-
-    )
+        </div>)
 }

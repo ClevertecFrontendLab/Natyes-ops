@@ -14,7 +14,8 @@ export const Button = (props) => {
     );
 }
 export const ButtonBook = (props) => {
-    const { booking, delivery} = props.propsBook;
+    const { booking, delivery} = props;
+
     const cls = booking ? 'btn btn-book  btn-book--i' : delivery === null ? 'btn btn-book' : 'btn btn-book  btn-book--bron black5';
     const title = booking ? 'Забронирована' : delivery === null ? 'Забронировать' : `Занята до ${delivery.dateHandedTo}`;
 

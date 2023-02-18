@@ -13,7 +13,6 @@ import './menu.css';
 export const MenuList = ({...props}) => {
     const items = useSelector(state => state.library.category)
     const loading = useSelector(state => state.app.loading)
-
     const dispatch = useDispatch()
 
     const getCategoryes = useCallback(() => {

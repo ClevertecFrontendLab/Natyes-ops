@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { FreeMode, Pagination, Scrollbar, Thumbs } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { HOST } from '../../services/api';
 
 import './slider-book.css';
 
@@ -10,16 +13,18 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/thumbs';
 
-export const SliderBook = ({...props}) => {
+export const SliderBook = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const { imgs } = props;
-      
+
+  const current = useSelector(state => state.library.currentBook);
+  const imgs = current.images;
+
   const mWidth = 992;
   const cWidth = document.body.clientWidth;
   const renderImgs = (arr, classes = '') => (
       arr.map(i => 
         <SwiperSlide className={`book-img book-i ${classes}`} data-test-id='slide-mini'>
-          <img src={i.img} alt="book" key={i.id}/>
+          <img src={HOST+i.url} alt="book" key={1}/>
         </SwiperSlide>
       )
     )

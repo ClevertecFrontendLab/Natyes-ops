@@ -9,15 +9,15 @@ export const SpecBook = (props) => {
         <div className="spec">
             <h5 className="title">{title}</h5>
             <ul className="spec-list">
-                <SpecBookItem title='Издательство' value={props.propsBook.publish}/>
-                <SpecBookItem title='Жанр' value={props.propsBook.genre}/>
-                <SpecBookItem title='Год издания' value={props.propsBook.year}/>
-                <SpecBookItem title='Вес' value={props.propsBook.weight}/>
-                <SpecBookItem title='Страниц' value={props.propsBook.pages}/>
-                <SpecBookItem title='ISBN' value={props.propsBook.isbn}/>
-                <SpecBookItem title='Переплёт' value={props.propsBook.binding}/>
-                <SpecBookItem title='Изготовитель' value={props.propsBook.manufact}/>
-                <SpecBookItem title='Формат' value={props.propsBook.format}/>
+                <SpecBookItem title='Издательство' value={props.publish}/>
+                <SpecBookItem title='Жанр' value={props.categories[0]}/>
+                <SpecBookItem title='Год издания' value={props.issueYear}/>
+                <SpecBookItem title='Вес' value={props.weight}/>
+                <SpecBookItem title='Страниц' value={props.pages}/>
+                <SpecBookItem title='ISBN' value={props.ISBN}/>
+                <SpecBookItem title='Переплёт' value={props.binding}/>
+                <SpecBookItem title='Изготовитель' value={props.producer}/>
+                <SpecBookItem title='Формат' value={props.format}/>
             </ul>
         </div>
      );

@@ -11,11 +11,10 @@ export const Book = ({...props}) => {
 
     return(
     <div className="book white" data-test-id='card'>
-        <div className={url ? 'book-i' : 'book-i book-no'}>
+        <div className='book-i book-no'>
             {
                 url ? <img src={url} alt={title} className="book-img" />  : ''
             }
-            
         </div>
         <div className="book-info">
             <div className="rating body-s black40">{rating === null ? 'ещё нет оценок' : <Rating rating={rating} key={id}/>}</div>

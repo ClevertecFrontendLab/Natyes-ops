@@ -1,22 +1,26 @@
-import { Rating } from "../rating";
+import { months } from '../../redux/types';
+import { Rating } from '../rating';
+
+import noneUser from './rev-user.png'
 
 import './review.css';
 
 export const Review = (props) => {
-    const { img, name, date, rating, body} = props;
-    
+    const { text, user, rating, createdAt } = props;
+    const date = new Date(Date.parse(createdAt));
+    const createDate = `${date.getDay()} ${months[date.getMonth()]} ${date.getFullYear()}`
+
     return ( 
         <div className="review">
             <div className="review-t">
-                <img src={img} alt='user' />
-                <div className="name body-l">{name}</div>
-                <div className="date body-l">{date}</div>
+                <img src={user.avatarUrl ? user.avatarUrl : noneUser} alt='user' />
+                <div className="name body-l">{`${user.firstName} ${user.lastName}`}</div>
+                <div className="date body-l">{createDate}</div>
             </div>
             <Rating rating={rating}/>
             {
-                body ? <div className="review-b body-l">{body}</div> : null
+                text ? <div className="review-b body-l">{text}</div> : null
             }
-            
         </div>
     );
 }

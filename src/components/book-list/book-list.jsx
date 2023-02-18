@@ -33,7 +33,7 @@ export const BookList = () => {
         <Filter view={view} onClick={value => setView(value)}/>
         <div className={bookView}>
             {!loading && books.map(book => 
-                <Link className='block' to={`/books/${category.find(i => i.name === book.categories[0]).path}/${book.id}`} state={{propsBook: book}} key={book.id}>
+                <Link className='block' to={`/books/${category.find(i => i.name === book.categories[0]).path}/${book.id}`} key={book.id}>
                     <Book book={book} key={book.id} view={view}/>
                 </Link>
             )}
