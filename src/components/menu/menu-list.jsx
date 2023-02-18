@@ -77,6 +77,9 @@ export const MenuList = ({...props}) => {
                 </div>
             </NavLink>
             <ul className={`menu-list ${toggleMenu()}`}>
+                {!loading &&
+                    <MenuItem main="main" key={24} menu={menu} onClick={clickBurger}/>
+                }
                 {!loading && items.map(item => 
                     <MenuItem item={item} key={item.id} menu={menu} onClick={clickBurger}/>
                 )}
