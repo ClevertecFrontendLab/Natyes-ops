@@ -6,7 +6,7 @@
     height: 100%;
     background: #3636364D;
     backdrop-filter: blur(10px);
-    z-index: 1000;
+    z-index: 10000;
 }
 .loader {
     width: 68.75px;
