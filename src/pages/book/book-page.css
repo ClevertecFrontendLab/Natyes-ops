@@ -1,8 +1,17 @@
+.book-page {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
 .book-page .header {
     margin-bottom: 27px;
 }
 .book-main.container {
     position: relative;
+}
+.book-main .error {
+    top: -19%;
 }
 @media screen and (max-width: 992px) {
     .book-page .header {

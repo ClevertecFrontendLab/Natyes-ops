@@ -31,6 +31,5 @@ export const BookInfo = () => {
             <BookRating {...current} title='Рейтинг'/>
             <SpecBook {...current} title='Подробная информация'/>
             <Reviews {...current} title='Отзывы' />
-            <Footer/>
         </div>)
 }

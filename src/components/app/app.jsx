@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { downLoader } from '../../redux/app-slice';
 
+import { downLoader } from '../../redux/app-slice';
 import { BookList } from '../book-list';
 import { ContractPage } from '../contract';
 import { Error } from '../error';
