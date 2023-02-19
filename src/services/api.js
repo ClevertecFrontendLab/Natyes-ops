@@ -6,7 +6,12 @@ import { setBook,setBooks, setCategory } from '../redux/books-slice';
 export const HOST = 'https://strapi.cleverland.by'
 const URL = 'https://strapi.cleverland.by/api/'
 
-const api = axios.create({baseURL: URL});
+const api = axios.create({
+    baseURL: URL,
+    headers: {
+        'Content-Type': 'application/json'
+    }
+});
 
 export const getLibrary = () => async dispatch => {
     try {

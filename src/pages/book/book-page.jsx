@@ -41,7 +41,7 @@ export const BookPage = () => {
             <div className="container">
                 <Header onClick={clickBurger} active={toggleBurger()}/>
             </div>
-            <Crumbs link={data && !error ? current.title : ''} category={categoryBook ?  categoryBook.find(i => i.path === category).name : ''} />
+            <Crumbs link={data && !error ? current.title : ''} category={() => categoryBook && categoryBook.find(i => i.path === category).name} />
         </div>
         <main className="container book-main">
             {error && <Error/>}
