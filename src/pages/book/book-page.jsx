@@ -20,13 +20,14 @@ export const BookPage = () => {
     const clickBurger = () => setBurger(!burger);
     const closeBurger = () => setBurger(false);
     
-    const { bookId }= useParams();
+    const { bookId, category }= useParams();
     const current = useSelector(state => state.library.currentBook);
     const data = useSelector(state => state.app.data);
     const loading = useSelector(state => state.app.loading);
+    const categoryBook = useSelector(state => state.library.category)
     const error = useSelector(state => state.app.error);
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         dispatch(getBook(bookId))
     }, [dispatch, bookId]);
@@ -40,7 +41,7 @@ export const BookPage = () => {
             <div className="container">
                 <Header onClick={clickBurger} active={toggleBurger()}/>
             </div>
-            <Crumbs link={data && !error ? current.title : ''} category={data ?  current.categories[0] : ''} />
+            <Crumbs link={data && !error ? current.title : ''} category={categoryBook ?  categoryBook.find(i => i.path === category).name : ''} />
         </div>
         <main className="container book-main">
             {error && <Error/>}
