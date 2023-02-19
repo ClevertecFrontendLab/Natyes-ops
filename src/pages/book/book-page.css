@@ -10,7 +10,7 @@
     margin-bottom: 27px;
 }
 .book-page .error {
-    top: -19%;
+    top: -124px;
 }
 @media screen and (max-width: 992px) {
     .book-page .header {
@@ -30,7 +30,7 @@
     .book-page .error {
         max-width: 640px;
         left: 50%;
-        top: -21%;
+        top: -121px;
         transform: translateX(-50%);
     }
 }
@@ -46,7 +46,7 @@
     }
     .book-page .error {
         max-width: 280px;
-        top: -9%;
+        top: -85px;
         gap: 11px;
     }
 }
