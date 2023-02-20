@@ -27,6 +27,7 @@ export const BookPage = () => {
     const categoryBook = useSelector(state => state.library.category)
     const error = useSelector(state => state.app.error);
     const dispatch = useDispatch();
+    const getCategory = () =>  categoryBook.find(i => i.path === category).name;
 
     useEffect(() => {
         dispatch(getBook(bookId))
@@ -41,7 +42,7 @@ export const BookPage = () => {
             <div className="container">
                 <Header onClick={clickBurger} active={toggleBurger()}/>
             </div>
-            <Crumbs link={data && !error ? current.title : ''} category={() => categoryBook && categoryBook.find(i => i.path === category).name} />
+            <Crumbs link={data && !error ? current.title : ''} category={getCategory()} />
         </div>
         <main className="container book-main">
             {error && <Error/>}
