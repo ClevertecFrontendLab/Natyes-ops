@@ -1,0 +1,104 @@
+.book-slider {
+    display: block;
+    max-width: 445px;
+    width: 100%;
+}
+.slider-main .swiper-pagination {
+    display: none;
+}
+.slider-thumbs {
+    position: relative;
+    margin-top: 18px;
+    max-height: 100px;
+    height: 100vh;
+}
+.slider-thumbs::before,
+.slider-thumbs::after{
+    content: '';
+    position: absolute;
+    top: -17px;
+    max-height: 86px;
+    height: 100vh;
+    box-shadow: 0 50px 10px 20px rgba(255, 255, 255, 0.8);
+    z-index: 10;
+}
+.slider-thumbs::before {
+    left: 0;
+}
+.slider-thumbs::after {
+    right: 0;
+}
+.book-page__img.book-page__img--main {
+    max-height: 696px;
+}
+.book-img.book-i {
+    height: 100vh;
+    border-radius: 10px;
+}
+.book-img.book-i:active {
+    border: none;
+    border-radius: 3px;
+}
+.book-img.book-i:active img{
+    border: 1px solid;
+    border-image: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%) 1;
+}
+.book-img__main,
+.book-img__thumbs {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.book-img__main {
+    max-height: 593px;
+}
+.book-img.book-i.book-img__thumbs {
+    max-width: 65px;
+    max-height: 86px;
+    border-radius: 3px;
+}
+.swiper-free-mode>.swiper-wrapper {
+    margin-bottom: 15px;
+}
+.slider-thumbs.swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+    height: 6px;
+    background: none;
+}
+.slider-thumbs .swiper-scrollbar .swiper-scrollbar-drag:first-child {
+    background: none;
+}
+.slider-thumbs .swiper-scrollbar .swiper-scrollbar-drag:last-child {
+    top: -3px;
+    background: #A7A7A7;
+}
+@media screen and (max-width: 992px)  {
+    .book-slider {
+        max-width: 136px;
+    }
+    .book-img__main{
+        max-height: 198px;
+    }
+    .slider-main .swiper-pagination {
+        display: block;
+        position: static;
+        margin-top: 16px;
+    }
+    .slider-main .swiper-pagination-bullet {
+        width: 7px;
+        height: 7px;
+        background: #BFC4C9;
+    }
+    .slider-main .swiper-pagination-bullet-active {
+        width: 9px;
+        height: 9px;
+        background: #363636;
+    }
+}
+@media screen and (max-width: 480px) {
+    .book-img__main {
+        max-height: 260px;
+    }
+    .book-img.book-i {
+        max-width: 188px;
+    }
+}

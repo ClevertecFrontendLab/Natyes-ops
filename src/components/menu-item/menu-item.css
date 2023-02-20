@@ -1,0 +1,22 @@
+.menu-list__item.body-l {
+    display: flex;
+    align-items: baseline;
+    padding-bottom: 16px;
+    line-height: 22px;
+}
+.menu-list__item.body-l:first-child {
+    padding-top: 16px;
+}
+.menu-list__item.body-l .active .title {
+    background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.menu-list__item .count {
+    line-height: 24px;
+}

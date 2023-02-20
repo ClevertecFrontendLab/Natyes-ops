@@ -1,0 +1,11 @@
+.rating-box {
+    max-width: 350px;
+}
+.rating-box .title{
+    margin: 0 0 16px;
+    padding: 0 0 16px;
+    border-bottom: 1px solid #EBEBEB;
+}
+.rating-box .rating {
+    align-items: center;
+}

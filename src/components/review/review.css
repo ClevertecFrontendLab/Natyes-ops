@@ -1,0 +1,10 @@
+.review-t {
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 0 24px;
+    color: #727272;
+}
+.review-b {
+    margin-top: 17px;
+}

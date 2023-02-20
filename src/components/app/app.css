@@ -1,0 +1,29 @@
+.container {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+.main-page .container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+.main {
+    display: grid;
+    grid-template-columns: 25.3% 74.7%;
+    position: relative;
+}
+@media screen and (max-width: 1024px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 0 64px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+}

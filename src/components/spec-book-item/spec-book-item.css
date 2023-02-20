@@ -1,0 +1,12 @@
+.spec-list__item {
+    display: flex;
+    gap: 0 70px;
+}
+.spec-list__item-title.subtitle-l {
+    max-width: 120px;
+    width: 100%;
+    color: #A7A7A7;
+}
+.spec-list__item-value.body-l {
+    color: #363636;
+}
