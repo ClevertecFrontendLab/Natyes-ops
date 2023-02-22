@@ -15,15 +15,17 @@ import { TermsPage } from '../terms';
 import './app.css';
 
 export const App = () => {
+    const [burger, setBurger] = useState(false);
+    const [category, setCategory] = useState('Все книги');
+
     const root = useLocation();
     const path = root.pathname;
     const loading = useSelector(state => state.app.loading);
     const error = useSelector(state => state.app.error);
-    const activeLink = () => path ===  '/' ? <BookList/> : path ===  '/terms' ? <TermsPage/> : path ===  '/contract' ? <ContractPage/> : <BookList/>;
+    const activeLink = () => path ===  '/' ? <BookList currentCategory={category}/> : path ===  '/terms' ? <TermsPage/> : path ===  '/contract' ? <ContractPage/> : <BookList currentCategory={category}/>;
 
     const dispatch = useDispatch()
 
-    const [burger, setBurger] = useState(false);
     const toggleBurger = () => burger ? 'show' : 'hide';
     const clickBurger = () => setBurger(!burger);
     const closeBurger = () => setBurger(false);
@@ -41,7 +43,13 @@ export const App = () => {
             <div className="main">
                 {error && <Error/>}
                 {(loading && !error) && <Loader/>}
-                <MenuList showMenu={toggleBurger()} clickBurger={clickBurger} closeBurger={closeBurger} burger={burger}/>
+                <MenuList 
+                    showMenu={toggleBurger()} 
+                    clickBurger={clickBurger} 
+                    closeBurger={closeBurger} 
+                    burger={burger}
+                    category={setCategory}
+                />
                 {!loading && activeLink()}
             </div>
             <Footer/>
