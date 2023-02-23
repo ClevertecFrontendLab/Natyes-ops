@@ -59,13 +59,17 @@
     position: absolute;
     top: 50%;
     left: 3%;
+    transition: .3s transform;
     transform: translateY(-50%);
     width: 16px;
     height: 16px;
     z-index: 10;
 }
 .filter-select__icon {
-    left: 4%;
+    left: 11%;
+}
+.filter-select__icon.active {
+    transform: translateY(-50%) rotate(180deg);
 }
 .btn-f {
     display: block;
