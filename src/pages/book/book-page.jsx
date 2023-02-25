@@ -14,22 +14,19 @@ import { getBook } from '../../services/api';
 import './book-page.css';
 
 export const BookPage = () => {
-    const navigate = useNavigate()
-    const link = () => navigate((-1), {state: 'book'})
-
+    const { bookId, category }= useParams();
     const [burger, setBurger] = useState(false);
     const toggleBurger = () => burger ? 'show' : 'hide';
     const clickBurger = () => setBurger(!burger);
     const closeBurger = () => setBurger(false);
-    
-    const { bookId, category }= useParams();
+
     const current = useSelector(state => state.library.currentBook);
     const data = useSelector(state => state.app.data);
     const loading = useSelector(state => state.app.loading);
     const categoryBook = useSelector(state => state.library.category)
     const error = useSelector(state => state.app.error);
     const dispatch = useDispatch();
-    const getCategory = () => category === 'all' ? 'Все книги' : categoryBook.find(i => i.name === category).name;
+    const getCategory = () => category === 'all' ? 'Все книги' : categoryBook.find(i => i.path === category).name;
     
     useEffect(() => {
         dispatch(getBook(bookId))
@@ -44,7 +41,7 @@ export const BookPage = () => {
             <div className="container">
                 <Header onClick={clickBurger} active={toggleBurger()}/>
             </div>
-            <Crumbs link={data && !error ? current.title : ''} category={categoryBook.length && getCategory()} onClick={link} path={category}/>
+            <Crumbs link={data && !error ? current.title : ''} category={categoryBook.length && getCategory()} path={category}/>
         </div>
         <main className="container book-main">
             {error && <Error/>}
