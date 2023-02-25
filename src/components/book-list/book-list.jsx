@@ -1,20 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useCallback, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getLibrary } from '../../services/api';
 import { Book } from '../book';
 import { Filter } from '../filter';
 
 import './book-list.css';
 
 export const BookList = (props) => {
-    const { currentCategory } = props;
-    const books = useSelector(state => state.library.books)
+    const { currentCategory, books } = props;
     const category = useSelector(state => state.library.category)
     const loading = useSelector(state => state.app.loading)
-    const dispatch = useDispatch()
 
     const [view, setView] = useState('grid');
     const [search, setSearch] = useState('');
@@ -28,16 +25,6 @@ export const BookList = (props) => {
     const sortBook = sort ? searchBook.sort((a,b) => a.rating - b.rating) : searchBook.sort((a,b) => b.rating - a.rating)
 
     const bookView = `books ${view}`;
-
-    const getBooks = useCallback(() => {
-        dispatch(getLibrary())
-    },[dispatch])
-
-    useEffect(() => {
-        if (!books.length) {
-            getBooks()
-        }
-    }, [getBooks, books]);
 
     return(
         <main>
@@ -54,8 +41,7 @@ export const BookList = (props) => {
         }
         <div className={bookView}>
             {!loading && categoryBook && searchBook && sortBook.map(book => 
-                
-                <Link className='block' to={`/books/${category.find(i => i.name === book.categories[0]).path}/${book.id}`} key={book.id}>
+                <Link className='block' to={currentCategory === 'Все книги' ? `/books/all/${book.id}/` : `/books/${category.find(i => i.name === book.categories[0]).path}/${book.id}`} key={book.id}>
                     <Book book={book} key={book.id} view={view} search={search}/>
                 </Link>
             )}
