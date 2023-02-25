@@ -40,7 +40,7 @@
     border-radius: 599px;
     outline: none;
     caret-color: #F83600;
-    background: url('./Search.svg') 3% 49% / 5% no-repeat;
+    background: url('./Search.svg') 3% 49% / 5% no-repeat, #fff;
 }
 .filter-search:focus {
     background: url('./searchActive.svg') 3% 49% / 5% no-repeat;
