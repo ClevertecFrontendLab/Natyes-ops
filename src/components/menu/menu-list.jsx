@@ -44,7 +44,6 @@ export const MenuList = ({...props}) => {
     const mWidth = 992;
     const cWidth = document.body.clientWidth;
     const checkMenu = () =>  cWidth < mWidth && showMenu === 'show' ? 'show black5': 'hide';
-    const checkTitle = () => cWidth > mWidth? 'navigation-books' : 'burger-books';
     const checkTerms = () => cWidth > mWidth ? 'navigation-terms' : 'burger-terms';
     const checkContract = () => cWidth > mWidth ? 'navigation-contract' : 'burger-contract';
 
@@ -72,7 +71,7 @@ export const MenuList = ({...props}) => {
     return(
         <nav ref={list} className={`menu ${checkMenu()}`} data-test-id='burger-navigation'>
             <div className="menu-nav">
-            <NavLink to='/books/all' className={`menu-link ${activeLink()} menu-link__select`} onClick={() => {clickMenu(); category()}} data-test-id={checkTitle()}>
+            <NavLink to='/books/all' className={`menu-link ${activeLink()} menu-link__select`} onClick={() => {clickMenu(); category()}}>
                 <h5 className="link">Витрина книг</h5>
                 <div className={`menu-arrow ${toggleMenu()}`} >
                     {
@@ -82,10 +81,10 @@ export const MenuList = ({...props}) => {
             </NavLink>
             <ul className={`menu-list ${toggleMenu()}`}>
                 {!loading &&
-                    <MenuItem main="main" key={24} menu={menu} onClick={clickBurger} category={category}/>
+                    <MenuItem main="main" key={24} menu={menu} onClick={clickBurger} close={closeBurger} category={category}/>
                 }
                 {!loading && items.map(item => 
-                    <MenuItem item={item} key={item.id} menu={menu} onClick={clickBurger} category={category}/>
+                    <MenuItem item={item} key={item.id} menu={menu} onClick={clickBurger} close={closeBurger} category={category}/>
                 )}
             </ul>
             <NavLink className='menu-link' to="/terms" onClick={() => {clickPage(); clickBurger(); close()}} data-test-id={checkTerms()}><h5 className='link link-oth'>Правила пользования</h5></NavLink>
