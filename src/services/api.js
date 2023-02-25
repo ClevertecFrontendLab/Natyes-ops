@@ -30,7 +30,6 @@ export const getCategory = () => async dispatch => {
         const res = await api.get('categories');
         
         dispatch(setCategory(res.data));
-        dispatch(downLoader());
     } catch (e) {
         dispatch(upError())
     }
