@@ -27,7 +27,6 @@ export const Filter = (props) => {
                 data-test-id='input-search'
                 onChange={e => onChange(e.target.value)}
             />
-            <img className='filter-search__icon' src={search ? saicon : sicon} alt='search'/>
             <button type='button' className='search-exit' data-test-id='button-search-close' onClick={toggleSearch}>
                 <img src={exit} alt='exit'/>
             </button>
