@@ -1,6 +1,8 @@
 .menu-list__item.body-l {
+    max-width: 130px;
     display: flex;
     align-items: baseline;
+    gap: 6px;
     padding-bottom: 16px;
     line-height: 22px;
 }

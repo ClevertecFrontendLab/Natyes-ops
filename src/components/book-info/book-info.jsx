@@ -1,17 +1,13 @@
-import { useSelector } from 'react-redux';
-
 import { BookRating } from '../book-rating';
 import { ButtonBook } from '../button';
-import { Footer } from '../footer';
 import { Reviews } from '../reviews';
 import { SliderBook } from '../slider-book';
 import { SpecBook } from '../spec-book';
 
 import './book-info.css';
 
-export const BookInfo = () => {
-    const current = useSelector(state => state.library.currentBook);
-
+export const BookInfo = (props) => {
+    const { current } = props;
     const imgs = current.images;
 
     return(
@@ -20,7 +16,7 @@ export const BookInfo = () => {
             {
                 current.images === null ? <div className='book-page__img book-i book-no' data-test-id='slide-big'/> : <SliderBook imgs={imgs}/>
             }     
-                <h3 className="book-page__title">{current.title}</h3>
+                <h3 className="book-page__title" data-test-id='book-title'>{current.title}</h3>
                 <h5 className="book-page__author black40">{current.authors[0]}, {current.issueYear}</h5>
                 <ButtonBook  {...current}/> 
                 <div className="book-page__text body-l">

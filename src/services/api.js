@@ -17,7 +17,7 @@ export const getLibrary = () => async dispatch => {
     try {
         dispatch(upLoader())
         const res = await api.get('books');
-        
+
         dispatch(setBooks(res.data));
         dispatch(downLoader());
     } catch (e) {
@@ -30,7 +30,6 @@ export const getCategory = () => async dispatch => {
         const res = await api.get('categories');
         
         dispatch(setCategory(res.data));
-        dispatch(downLoader());
     } catch (e) {
         dispatch(upError())
     }
