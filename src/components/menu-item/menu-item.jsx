@@ -26,7 +26,6 @@ export const MenuItem = ({...props}) => {
             count()
         } 
     },[count, item])
-    console.log(checkBurger());
 
     return(<li className='menu-list__item body-l'>
     {
