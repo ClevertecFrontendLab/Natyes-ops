@@ -1,6 +1,7 @@
 .menu-list__item.body-l {
     display: flex;
     align-items: baseline;
+    gap: 6px;
     padding-bottom: 16px;
     line-height: 22px;
 }
