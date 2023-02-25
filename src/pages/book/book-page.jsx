@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useDispatch,useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import {  useNavigate, useParams } from 'react-router-dom';
 
 import { BookInfo } from '../../components/book-info';
 import { Crumbs } from '../../components/crumbs';
@@ -14,6 +14,8 @@ import { getBook } from '../../services/api';
 import './book-page.css';
 
 export const BookPage = () => {
+    const navigate = useNavigate()
+    const link = () => navigate((-1), {state: 'book'})
 
     const [burger, setBurger] = useState(false);
     const toggleBurger = () => burger ? 'show' : 'hide';
@@ -27,8 +29,8 @@ export const BookPage = () => {
     const categoryBook = useSelector(state => state.library.category)
     const error = useSelector(state => state.app.error);
     const dispatch = useDispatch();
-    const getCategory = () =>  categoryBook.find(i => i.path === category).name;
-
+    const getCategory = () => category === 'all' ? 'Все книги' : categoryBook.find(i => i.name === category).name;
+    
     useEffect(() => {
         dispatch(getBook(bookId))
     }, [dispatch, bookId]);
@@ -42,7 +44,7 @@ export const BookPage = () => {
             <div className="container">
                 <Header onClick={clickBurger} active={toggleBurger()}/>
             </div>
-            <Crumbs link={data && !error ? current.title : ''} category={getCategory()} />
+            <Crumbs link={data && !error ? current.title : ''} category={categoryBook.length && getCategory()} onClick={link} path={category}/>
         </div>
         <main className="container book-main">
             {error && <Error/>}
@@ -50,7 +52,7 @@ export const BookPage = () => {
             {
                 mWidth > cWidth ? <MenuList showMenu={toggleBurger()} closeBurger={closeBurger} burger={burger}/> : ''
             }
-            {data && <BookInfo/>}
+            {data && <BookInfo current={current}/>}
         </main>
         <div className="container">
             <Footer/>
