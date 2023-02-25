@@ -23,7 +23,7 @@ export const Filter = (props) => {
             <input 
                 className="filter-search body-s" 
                 type="text" 
-                placeholder="Поиск книги или автора..." 
+                placeholder="Поиск книги или автора…" 
                 data-test-id='input-search'
                 onChange={e => onChange(e.target.value)}
             />
@@ -32,7 +32,7 @@ export const Filter = (props) => {
                 <img src={exit} alt='exit'/>
             </button>
         </div>
-        <button type='button' className="filter-select  input" onClick={sortChange} data-test-id='sort-rating-button'>
+        <button type='button' className="filter-select input" onClick={sortChange} data-test-id='sort-rating-button'>
             <div type='button' className="black40 body-s" name="rating" id="rating" >
                 По рейтингу
             </div>
