@@ -41,7 +41,10 @@ export const App = () => {
     },[dispatch])
 
     useEffect(() => {
-        if (!books.length || root.state) {
+        if (!books.length) {
+            getBooks()
+        } else if (root.state) {
+            root.state = '';
             getBooks()
         }
         if (path === '/terms' || path ===  '/contract') {
