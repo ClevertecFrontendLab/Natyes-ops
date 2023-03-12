@@ -1,4 +1,8 @@
-.header {
+.main-page .header {
+    box-shadow: 4px 4px 4px rgba(54, 54, 54, 0.05), -4px 4px 4px rgba(54, 54, 54, 0.05);
+}
+.main-page .header .container {
+    min-height: auto;
     margin-bottom: 47px;
     padding: 32px 0 15px;
     display: grid;
@@ -53,16 +57,19 @@
     .menu {
         display: none;
     }
-    .header {
+    .main-page .header .container {
+        max-height: 96px;
         margin-bottom: 30px;
-        padding: 32px 0 24px;
+        padding: 32px 0 24px 66px;
         grid-template-columns: 32px 1fr;
         gap: 24px;
     }
 }
 @media screen and (max-width: 480px) {
-    .header {
+    .main-page .header .container {
+        max-height: 76px;
         margin-bottom: 10px;
+        padding: 32px 0 24px 18px;
         padding: 24px 0;
         gap: 16px;
     }
@@ -90,7 +97,7 @@
         transform: rotate(45deg) translateY(-12px);
     }
 
-    .header h3 {
+    .main-page .header .container h3 {
         font-size: 18px;
         line-height: 28px;
     }
