@@ -1,11 +1,22 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { App } from '../../components/app';
 
 import './main-page.css';
 
-import logo from '../../components/header/logo.svg';
+export const MainPage = () => {
+    const navigate = useNavigate()
+    const jwt = localStorage.getItem('jwt')
 
-export const MainPage = () => (
+    useEffect(()=> {
+        if (!jwt) {
+            navigate('/auth')
+        }
+    }, [jwt, navigate])
+    
+    return(
     <section className='main-page'>
-        <App/>
+        {jwt && <App/>}
     </section>
-);
+)}

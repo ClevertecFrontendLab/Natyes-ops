@@ -8,7 +8,7 @@ import './rating.css'
 
 
 export const Rating = (props) => {
-    const [rating, setRating] = useState(props.rating)
+    const [rating] = useState(props.rating)
 
     const r = rating ? rating : 'ещё нет оценок';
     const cls = rating ? 'rating-num h5' : 'rating-num body-s';

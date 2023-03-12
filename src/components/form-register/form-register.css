@@ -1,0 +1,191 @@
+.status-forgot__text.mb-32 {
+    display: block;
+    margin-bottom: 32px;
+}
+.check-page__title {
+    margin-bottom: 59px;
+    color: #fff;
+    text-align: center;
+}
+.form-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 528px;
+    width: 100%;
+    transform: translate(-50%,-50%);
+}
+.form {
+    position: relative;
+}
+.form,
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 48px 56px;
+    background: #fff;
+    border-radius: 16px;
+}
+.form-container {
+    padding: 0;
+}
+.form-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 52px;
+    background: #F9F9FA;
+    color: #727272;
+    border-radius: 16px 16px 0px 0px;
+}
+.link-auth.btn-s {
+    position: relative;
+    font-size: 12px;
+}
+.link-auth::before {
+    content: url('./arrow-left.svg');
+    position: absolute;
+    top: 0;
+    left: -33px;
+}
+.form-top ~ .form-container {
+    margin-top: 32px;
+}
+.form-container 
+.subtitle-s {
+    margin-top: 8px;
+}
+.form-row,
+.form-pass {
+    position: relative;
+}
+.input-eye {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: url('./EyeClosed.svg');
+    cursor: pointer;
+}
+.input-eye--open {
+    background: url('./Eye.svg');
+}
+.input-check--none {
+    display: none;
+}
+.input-check {
+    display: block;
+    position: absolute;
+    right: 50.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.form-label {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    transition: top .3s, font-size .3s;
+}
+.form-login .form-label {
+    top: 40%;
+}
+.form-input {
+    min-height: 56px;
+    padding: 19px 12px;
+    background: #F9F9FA;
+    border: 0;
+    border-bottom: 1px solid #BFC4C9;
+    border-radius: 4px 4px 0 0;
+    width: 100%;
+    outline: 0;
+}
+.form-input--error {
+    border-bottom: 1px solid #F42C4F;
+}
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+    visibility: visible;
+    top: 12px;
+    font-size: 12px;
+    line-height: 16px;
+}
+.form-input::placeholder {
+    font-size: 14px;
+}
+.form-input:focus::placeholder {
+    font-size: 0;
+}
+.form-error {
+    margin: 2px 0 0 12px;
+    color: #A7A7A7;
+}
+.link-forgot {
+    display: block;
+    margin: 20px 0 0 12px;
+    color: #A7A7A7;
+}
+.form-btn {
+    width: 100%;
+    padding: 14px 0;
+    height: 52px;
+    background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+    border: 0;
+    border-radius: 30px;
+    color: #fff;
+}
+.form-no-register {
+    margin-top: 19px;
+}
+.link-register {
+    margin-left: 16px;
+}
+.error-text {
+    color: #F42C4F;
+}
+.status-forgot {
+    text-align: center;
+}
+.status-forgot__title {
+    margin-bottom: 32px;
+    text-align: inherit;
+}
+.status-forgot__text {
+    text-align: inherit;
+}
+@media screen and (max-width: 480px) {
+    .form-top ~ .form-container {
+        margin-top: 64px;
+    }
+    .form-no-register {
+        display: flex;
+        flex-direction: column;
+    }
+    .check-page__title {
+        margin-bottom: 12px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .form-box {
+        padding: 16px;
+    }
+    .form {
+        padding: 24px 16px;
+    }
+    .form-btn.btn-l {
+        height: 40px;
+        padding: 0;
+        border-radius: 20px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .link-register {
+        margin: 7px 0 0 0;
+    }
+}
