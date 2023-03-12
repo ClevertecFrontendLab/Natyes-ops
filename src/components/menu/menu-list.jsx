@@ -5,6 +5,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { downError } from '../../redux/app-slice';
 import { getCategory } from '../../services/api';
 import  { MenuItem }  from '../menu-item';
+import { Exit } from '../user/exit';
 
 import arrow from './arrow.png'
 import arrowa from './arrowa.png'
@@ -91,12 +92,7 @@ export const MenuList = ({...props}) => {
             <NavLink className='menu-link' to="/contract" onClick={() => {clickPage(); clickBurger(); close()}} data-test-id={checkContract()}><h5 className='link link-oth'>Договор оферты</h5></NavLink>
             </div>
             {
-                showMenu === 'show' && cWidth < mWidth ? 
-                <div className="menu-user">
-                    <NavLink className='menu-link' to="/account"><h5 className='link link-oth'>Профиль</h5></NavLink>
-                    <NavLink className='menu-link' to="/exit"><h5 className='link link-oth'>Выход</h5></NavLink>
-                </div>
-                : ''
+                showMenu === 'show' && cWidth < mWidth && <Exit/>
             }
         </nav>
     )
