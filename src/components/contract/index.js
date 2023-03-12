@@ -1,1 +1,1 @@
-export { ContractPage } from "./contract"
+export { ContractPage } from './contract'
