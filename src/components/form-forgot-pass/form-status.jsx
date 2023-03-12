@@ -1,17 +1,18 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export const FormResetSucsess = () => {
+export const FormStatus = (props) => {
     const navigate = useNavigate()
+    const {title, text} = props
 
     return(
     <React.Fragment>
         <div className='status-forgot' data-test-id='status-block'>
             <h4 className="form-title status-forgot__title">
-                Новые данные сохранены
+                {title}
             </h4>
             <span className='status-forgot__text'>
-                Зайдите в личный кабинет, используя свои логин и новый пароль
+                {text}
             </span>
         </div>
         <button type='button' className='form-btn btn-l' onClick={() => navigate('auth')}>вход</button>

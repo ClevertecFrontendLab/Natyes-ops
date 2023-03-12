@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
@@ -9,8 +9,7 @@ import { forgotCode, setStatus } from '../../redux/user-slice';
 import { forgotPass, resetPass } from '../../services/api';
 
 import { FormResetPass } from './form-reser-pass';
-import { FormResetError } from './form-reset-error';
-import { FormResetSucsess } from './form-reset-sucsess';
+import { FormStatus } from './form-status';
 import { Reset } from './reset';
 
 const checkEmail = yup.object({
@@ -66,7 +65,7 @@ export const FormForgotPass = () => {
         
         {!code && status !== 200 && <Reset register={register} errors={errors}/> }
         {code && (status !== 500 && status !== 200 ) ? <FormResetPass register={register} errors={errors} getValues={getValues} submit={submit} valid={isValid}/> : null}
-        {code && !error && status === 200 ? <FormResetSucsess/> : status === 500 ? <FormResetError/>  : null}
+        {code && !error && status === 200 ? <FormStatus title='Новые данные сохранены' text='Зайдите в личный кабинет, используя свои логин и новый пароль'/> : status === 500 ? <FormStatus title='Данные не сохранились' text='Что-то пошло не так. Попробуйте ещё раз'/>  : null}
       </form>
     </div>
     </main>
