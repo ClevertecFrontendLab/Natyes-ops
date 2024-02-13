@@ -1,0 +1,22 @@
+#root {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    align-items: center;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.layout {
+    position:relative;
+    background: url('@public/main_page_light.jpg') 105% center / cover no-repeat;
+
+    @media (screen and max-width: 992px) {
+        background: url('@public/main_page_light.jpg') 60% center / cover no-repeat;
+    }
+}

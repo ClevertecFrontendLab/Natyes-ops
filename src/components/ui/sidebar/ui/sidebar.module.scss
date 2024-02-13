@@ -1,0 +1,104 @@
+@import '@constants/colors.module';
+
+.sidebar {
+    position: relative;
+    min-height: 100vh;
+    background: $character-light-primary-inverse;
+
+    @media (screen and max-width: 560px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+  }
+}
+
+.logo {
+    width: 133px;
+    margin-left: 0;
+    display: inline-block;
+    padding: 44px 9px 13px;
+
+    transition: width .3s, margin-left .3s, transform .3s, padding .3s;
+
+    &.small {
+        width: 44px;
+        margin-left: -6px;
+        padding: 50px 9px 5px 0;
+        overflow: hidden;
+        direction: rtl;
+        transform: scale(.8);
+    }
+
+    @media (screen and max-width: 560px) {
+      position: absolute;
+      top: 8px;
+      left: -12px;
+      width: 100%;
+      margin-left: 0;
+      padding: 0 9px;
+      transform: scale(0.54);
+
+    &.small {
+        top: 8px;
+        left: -12px;
+        padding: 0 9px;
+        width: 0;
+        transform: scale(0.54);
+    }
+  }
+}
+
+.menu {
+    margin-top: 46px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px 0;
+    align-items: center;
+    justify-content: space-between;
+
+    &:after, &:before {
+
+        content: none;
+    }
+    @media (screen and max-width: 560px) {
+        margin-top: 13px;
+        gap: 0;
+    }
+}
+.space {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.exit-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 19px 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: inset 0 1px 0 0 $character-light-dividers;
+
+    svg {
+        fill: $neutral-gray-13;
+    }
+
+    span {
+        display: inline-block;
+        padding: 4px 15px;
+        color: $character-light-title-85;
+    }
+
+
+    &.exit-collapsed{
+        margin-top: 82.5vh;
+        svg {
+            // padding-top: 17px;
+            width: 15px;
+        }
+    }
+}

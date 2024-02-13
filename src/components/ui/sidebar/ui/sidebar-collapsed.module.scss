@@ -1,0 +1,57 @@
+@import '@constants/colors.module';
+
+.trapezoid {
+  position:absolute;
+  top: 47%;
+  right: 0;
+  left: 100%;
+  width: 20px;
+  height: 66px;
+  position: relative;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 20px solid white;
+  transform: translateY(-56%);
+
+  z-index:1000;
+
+  transition: top 1s, transform 1s;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-30%, -50%);
+    fill: $character-light-secondary-45;
+  }
+  @media (screen and max-width: 992px) {
+      top: 49%;
+      transform: translateY(-62%);
+
+      &.collapsed {
+          top: 53%;
+          transform: translateY(-61%);
+      }
+  }
+  @media (screen and max-width: 560px) {
+      width: 38px;
+      height: 48px;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 33px solid white;
+      top: 57px;
+      right: -20%;
+      transform: translateY(-68%);
+
+      svg {
+        transform: translate(-80%, -50%);
+      }
+
+      &.collapsed {
+          position: fixed;
+          top: 50px;
+          left: 0;
+          transform: translateY(-56%);
+      }
+  }
+}

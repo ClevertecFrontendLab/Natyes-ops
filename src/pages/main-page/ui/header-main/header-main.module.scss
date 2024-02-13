@@ -1,0 +1,40 @@
+.space-header {
+    line-height: 130%;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+        margin: 14px 0;
+        font-weight: 700;
+
+        .paragraph {
+            margin: 0;
+        }
+
+        @media (screen and max-width: 992px) {
+            font-weight:500;
+            font-size: 24px;
+        }
+        @media (screen and max-width: 560px) {
+            margin-top: 6px;
+            font-size: 20px;
+
+            .paragraph {
+                margin-top: 3px;
+            }
+        }
+    }
+}
+
+.button {
+    padding: 0;
+    margin: 6px 25px 0 0;
+    line-height: 130%;
+
+    @media (screen and max-width: 992px) {
+        margin: 5px 5px 0 0;
+    }
+    @media (screen and max-width: 560px) {
+        margin: 0;
+    }
+}
