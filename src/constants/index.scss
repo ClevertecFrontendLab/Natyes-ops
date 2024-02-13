@@ -1,5 +1,8 @@
+@import './colors.module';
+@import './fonts.module.scss';
+
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: $font;
     line-height: 1.5;
     font-weight: 400;
 
@@ -23,9 +26,9 @@ a:hover {
 }
 
 body {
+    font-family: $font;
+    line-height: 130%;
     margin: 0;
-    display: flex;
-    place-items: center;
     min-width: 320px;
     min-height: 100vh;
 }
@@ -33,6 +36,29 @@ body {
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
+}
+
+.menu {
+
+    svg, path {
+        fill: $primary-light-9;
+    }
+    &.ant-menu-inline-collapsed svg {
+        width: 14px;
+    }
+}
+
+@media (screen and max-width: 560px) {
+    .space-card .ant-card-small > .ant-card-body {
+        padding: 10px 15px 16px;
+    }
+    .ant-list-grid .ant-col > .ant-list-item {
+        margin-bottom: 7px;
+    }
+    .ant-menu-inline .ant-menu-item:not(:last-child){
+        margin-bottom: 6px;
+        padding-right: 8px;
+    }
 }
 
 button {
@@ -52,6 +78,15 @@ button:hover {
 button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+}
+.ant-menu-item .ant-menu-item-icon + span {
+    margin-left: 12px;
+}
+footer .ant-card-head-title {
+    padding: 16px 0 11px;
+}
+footer .ant-card-body {
+    padding: 19px 16px 18px 12px;
 }
 
 @media (prefers-color-scheme: light) {

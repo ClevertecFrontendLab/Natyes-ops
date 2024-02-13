@@ -1,0 +1,19 @@
+$main-font: Inter;
+
+@font-face {
+    font-family: $main-font;
+    font-weight: 700;
+    src: url('@public/fonts/Inter-Bold.ttf');
+}
+@font-face {
+    font-family: $main-font;
+    font-weight: 500;
+    src: url('@public/fonts/Inter-Medium.ttf');
+}
+@font-face {
+    font-family: $main-font;
+    font-weight: 400;
+    src: url('@public/fonts/Inter-Regular.ttf');
+}
+
+$font:  $main-font, system-ui, Avenir, Helvetica, Arial, sans-serif;
