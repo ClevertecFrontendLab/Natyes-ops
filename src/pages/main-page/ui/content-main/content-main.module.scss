@@ -1,0 +1,88 @@
+@import '@constants/colors.module';
+.main {
+    padding: 24px;
+
+    @media (screen and max-width: 560px) {
+        padding: 20px 16px 12px;
+    }
+}
+.space {
+    max-width:752px;
+    width: 100%;
+
+    @media (screen and max-width: 560px) {
+        max-width: 328px;
+    }
+}
+.list {
+    color: $primary-light-9;
+    font-size: 16px;
+    line-height: 130%;
+
+    .item{
+        padding: 0;
+        border: 0;
+        color: inherit;
+    }
+    @media (screen and max-width: 560px) {
+        line-height: 31px;
+
+        .item {
+            margin-top: -4px;
+            margin-bottom: 4px;
+            line-height: 130%;
+        }
+    }
+}
+.card-list {
+    margin-top: 16px;
+
+    svg {
+        color: $primary-light-6;
+    }
+}
+.card-item {
+    word-break: break-word;
+
+    .card-title {
+        padding: 3px 0 4px;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        white-space: pre-wrap;
+
+        color: $character-light-title-85;
+
+        @media (screen and max-width: 992px) {
+            padding: 3px 0 4px 12px;
+            text-align: left;
+        }
+        @media (screen and max-width: 560px) {
+            padding: 4px 0;
+            text-align: center;
+        }
+    }
+
+    .card-link {
+        display: block;
+        padding: 5px 2px;
+
+        span {
+            width: 12px;
+            margin-right: 4px;
+        }
+    }
+}
+h4.card-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: $character-light-title-85;
+
+    @media (screen and max-width: 560px) {
+        margin-top: 3px;
+        line-height: 129%;
+    }
+}

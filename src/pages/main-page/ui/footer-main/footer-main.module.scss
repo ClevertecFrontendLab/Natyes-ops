@@ -1,0 +1,80 @@
+@import '@constants/colors.module';
+.footer {
+    align-items: center;
+    margin-top: 138px;
+    padding: 0 43px 56px 38px;
+    display:flex;
+    justify-content: space-between;
+    align-items: end;
+
+    font-size: 16px;
+
+    width: 100%;
+    background: transparent;
+
+    a {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 130%;
+        color: $primary-light-6;
+    }
+
+    @media (screen and max-width: 992px) {
+        padding-right: 24px;
+        margin-top: 222px;
+    }
+    @media (screen and max-width: 560px) {
+        padding: 4px 16px;
+
+        flex-direction: column-reverse;
+        align-items: stretch;
+        margin-top: 0;
+        text-align: center;
+    }
+}
+.footer > a {
+    line-height: 39px;
+    @media (screen and max-width: 560px) {
+        line-height: 86px;
+    }
+}
+.footer-card {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: -4px;
+    padding: 0 25px 0 0;
+
+    span {
+        display: inline-block;
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: 400;
+        color: $character-light-secondary-45;
+    }
+
+    @media (screen and max-width: 560px) {
+        padding: 0;
+    }
+}
+.footer-card-body {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+        width: 12px;
+        margin-right: 10px;
+
+        svg {
+            color: $character-light-title-85;
+        }
+    }
+
+    a {
+        color: $character-light-title-85;
+        font-size: 14px;
+    }
+    @media (screen and max-width: 560px) {
+        padding: 0 21px;
+    }
+}
