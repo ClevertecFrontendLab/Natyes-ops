@@ -1,0 +1,11 @@
+@import '@constants/colors.module';
+
+.header {
+    height: auto;
+    padding: 14px 33px 10px 24px;
+    background: $primary-light-1;
+
+    @media (screen and max-width: 560px) {
+        padding: 13px 24px 10px 24px;
+    }
+}
