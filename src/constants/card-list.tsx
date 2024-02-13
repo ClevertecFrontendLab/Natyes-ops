@@ -1,4 +1,4 @@
-import { HeartFilled, IdcardOutlined, CalendarOutlined } from '@ant-design/icons';
+import { HeartFilled, IdcardOutlined, CalendarTwoTone } from '@ant-design/icons';
 import { routes } from './routes';
 
 export const CardListItems: ListItem[] = [
@@ -10,7 +10,7 @@ export const CardListItems: ListItem[] = [
     },
     {
         title: 'Назначить календарь',
-        icon: <CalendarOutlined />,
+        icon: <CalendarTwoTone twoToneColor={['#2F54EB', '#2F54EB']} />,
         label: 'Календарь',
         path: routes.Progress['path'],
     },
