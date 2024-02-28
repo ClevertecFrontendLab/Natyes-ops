@@ -1,0 +1,54 @@
+@import '@constants/colors.module';
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    // delete !important
+    background: url('@public/login_page_light.jpg') center / cover no-repeat !important;
+}
+
+.container {
+    max-width: 539px;
+    width: 100%;
+    padding: 64px 85.5px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    max-width: 309px;
+    margin: 0 auto 48px;
+}
+
+.tabs {
+    text-align: center;
+
+    :global {
+        .ant-tabs-nav-list {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+        .ant-tabs-tab {
+          width: 50%;
+          justify-content: center;
+          font-size: 16px;
+
+          &:hover {
+              color: $primary-light-6;
+          }
+          &.ant-tabs-tab-active {
+              &::selection {
+                  color: $primary-light-6;
+              }
+              .ant-tabs-tab-btn {
+                  color: $primary-light-6 ;
+              }
+          }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@import '@constants/colors.module';
+
+.result {
+    max-width: 539px;
+    width: 100%;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    background: $character-light-primary-inverse;
+    padding: 64px 85.5px;
+    text-align: center;
+
+    .title {
+        margin: 0;
+    }
+    text-align: center;
+
+    .description {
+        margin-bottom: 24px;
+       color: $character-light-secondary-45;
+    }
+
+    :global {
+        .ant-btn-primary {
+            width: 100%;
+            background-color: $primary-light-6;
+        }
+    }
+}
+
+.description {
+   :global {
+       .ant-typography {
+           color: $character-light-secondary-45;
+       }
+   }
+}
+
+.container_input {
+    margin: 0 auto;
+}
+
+.character {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid $character-light-border;
+    border-radius: 2px;
+
+    font-weight: 400;
+    font-size: 14px;
+    background-color: $character-light-sider-background;
+    color: $character-light-title-85;
+}
+
+.error {
+    border-color: $character-light-error;
+}

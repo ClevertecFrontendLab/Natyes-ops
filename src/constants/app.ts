@@ -3,3 +3,5 @@ export enum AppSize {
     medium = 'medium',
     small = 'small',
 }
+
+export const LOCAL_STORAGE_KEY = 'token';
