@@ -1,0 +1,31 @@
+@import '@constants/colors.module';
+
+.df {
+    :global {
+        .ant-form-item-control-input-content {
+            display: flex;
+            justify-content: space-between;
+
+            .ant-btn-link {
+                height: auto;
+                padding: 0;
+                color: $primary-light-6;
+            }
+        }
+    }
+}
+
+.btns-wrapper {
+    :global {
+        .ant-form-item-control-input-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .ant-btn-primary {
+                background-color: $primary-light-6;
+            }
+        }
+    }
+}
+

@@ -1,16 +1,20 @@
-import Sider from 'antd/lib/layout/Sider';
-import { FC, useState, useMemo, memo } from 'react';
-import { Menu, Button, Space } from 'antd';
+import { AppSize, LOCAL_STORAGE_KEY } from '@constants/app';
+import { RoutesPaths } from '@constants/routes';
 import { SidebarItems } from '@constants/sidebar';
-import { SidebarColapsed } from './sidebar-colapsed';
-import { AppSize } from '@constants/app';
-
-import LogoFull from '@public/logo_full.svg?react';
 import Exit from '@public/exit.svg?react';
+import LogoFull from '@public/logo_full.svg?react';
+import { authActions } from '@redux/models/auth';
+import { Button, Menu, Space } from 'antd';
+import Sider from 'antd/lib/layout/Sider';
+import { FC, memo, useMemo, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { push } from 'redux-first-history';
 
 import cls from './sidebar.module.scss';
+import { SidebarColapsed } from './sidebar-colapsed';
 
 export const Sidebar: FC = memo((size: string) => {
+    const dispatch = useDispatch();
     const checkCollapsed = size === AppSize.small ? true : false;
 
     const [collapsed, setCollapsed] = useState(checkCollapsed);
@@ -39,6 +43,11 @@ export const Sidebar: FC = memo((size: string) => {
 
     const btnTitle = !collapsed ? 'Выход' : '';
 
+    const loginOut = () => {
+        dispatch(authActions.removeAccessToken());
+        dispatch(push(RoutesPaths.Auth));
+    };
+
     return (
         <Sider
             className={cls.sidebar}
@@ -60,7 +69,7 @@ export const Sidebar: FC = memo((size: string) => {
                     className={menuClass}
                     items={menuItems}
                 />
-                <Button type='text' icon={btnIcon} className={exitClass}>
+                <Button type='text' icon={btnIcon} className={exitClass} onClick={loginOut}>
                     {btnTitle}
                 </Button>
             </Space>

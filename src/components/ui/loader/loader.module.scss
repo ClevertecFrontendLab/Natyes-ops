@@ -1,7 +1,12 @@
 .loader {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
     width: 100%;
     min-height: 100vh;
+    backdrop-filter: blur(12px);
+    background: rgba(121, 156, 212, 0.5);
 
     svg {
         position: absolute;
